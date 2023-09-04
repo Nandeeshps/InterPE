@@ -1,0 +1,143 @@
+*{
+    margin: 0; 
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+body{
+    background: url("background.png");
+    color: white;
+    font-family: "Poppins",sans-serif;
+    height: 1200px;
+    width: 1200px;
+}
+.todo-app{
+    width: 50%;
+    min-width: 540px;
+    background: rgba(255, 255, 255, 0.457);
+    margin: 100px auto 20px;
+    padding: 40px 30px 70px;
+    border-radius: 10px;
+}
+.todo-app img{
+    width: 30px;
+    height: 30px;
+    margin-left: 10px;
+}
+.todo-app h1{
+display: flex;
+align-items: center;
+margin-bottom: 20px;
+color: purple;
+justify-content: center;
+}
+.row{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 30px;
+    padding-left: 20px;
+    margin-bottom: 25px;
+}
+input{
+    flex: 0.9;
+    border: none;
+    outline: none;
+    padding: 10px;
+    border-radius: 10px;
+}
+button{
+    border: none;
+    outline: none;
+    padding: 4px 15px;
+    background-color: white;
+    color: purple;
+    font-size: 30px;
+    cursor: pointer;
+    border-radius: 30%;
+}
+button:hover{
+    background: purple;
+    color: white;
+}
+ul li{
+    list-style: none;
+    font-size: 20px;
+    padding: 12px 8px 12px 60px;
+    user-select: none;
+    border-radius: 10px;
+    background: white;
+    height: 50px;
+    color: purple;
+    cursor: pointer;
+    margin-bottom: 30px;
+    margin-left: 20px;
+    position: relative;
+}
+ul li::before{
+content: '';
+position: absolute;
+height: 50px;
+width: 50px;
+background: url("unchecked.png");
+mix-blend-mode: multiply;
+background-size: cover;
+background-position: center;
+top: 0px;
+left: 4px;
+}
+ul li.checked{
+    color: purple;
+    text-decoration: line-through;
+}
+ul li.checked::before{
+    background: url("checked.png");
+    height: 50px;
+width: 50px;
+background-size: cover;
+background-position: center;
+}
+ul li span{
+    position: absolute;
+    right: 2px;
+    top: 4px;
+    width: 40px;
+    height: 40px;
+    font-size: 22px;
+    color: purple;
+    line-height: 40px;
+    text-align: center;
+    background: white;
+    border-radius: 5px;
+}
+ul li span:hover{
+    background: red;
+    color: white;
+}
+
+@media (max-width: 1024px){
+    body{
+        height: 1025px;
+    }
+}
+@media (max-width: 480px){
+    body{
+        width: 390px;
+        height: 850px; 
+    }
+    .todo-app{
+        width: unset;
+        min-width: 0px;
+    }
+    .row {
+        justify-content:space-evenly;
+    }
+    input{
+        flex: 0.5;
+    }
+}
